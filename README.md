@@ -4,7 +4,7 @@ Steps
 
    * Execute : `docker-compose up -d --build`
    * Execute `docker-compose exec php-fpm sh install.sh ` install project dependencies
-   * Configure ApiKey for https://geo.ipify.org/ in .env file for the front project
+   * Configure ApiKey for  https://geo.ipify.org/ in .env file for the front project
      `./front/.env`  variable : **IP_GEOLOCALISATION_API_KEY**
    
 Front Application

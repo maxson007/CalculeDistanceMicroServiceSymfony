@@ -18,7 +18,7 @@ class DefaultController extends AbstractController
      *
      * @Route("/", name="default")
      */
-    public function index(Request $request, Client $client, IPGeolocation $iPGeolocation, GeolocationApiGouv $apiGouv, CalculatorDistanceApi $calculatorDistanceApi)
+    public function index(Request $request, Client $client, CalculatorDistanceApi $calculatorDistanceApi)
     {
 
         $form = $this->createForm(CalculateDistanceType::class,new CalculateDistanceDTO());
@@ -31,9 +31,7 @@ class DefaultController extends AbstractController
             if(!$dto instanceof CalculateDistanceDTO)
                 throw new \Exception();
             try{
-                $point=$iPGeolocation->getGeoPointByIP($dto->ipAddress);
-                $point2=$apiGouv->getGeoPointByPostalAddress($dto->postalAdress);
-                $reponse=$calculatorDistanceApi->getDistanceByPoints($point,$point2);
+                $reponse=$calculatorDistanceApi->getDistanceByIpAndPostalAdress($dto->ipAddress,$dto->postalAdress);
                 $response=json_decode($reponse);
                 $distance=$response->distance;
             }catch (\Exception $exception){
