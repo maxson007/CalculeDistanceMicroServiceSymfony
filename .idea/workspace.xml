@@ -4,6 +4,7 @@
     <list default="true" id="1be17969-b716-4369-b177-49042452a14f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/.env" beforeDir="false" afterPath="$PROJECT_DIR$/front/.env" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,8 +108,16 @@
       <workItem from="1573167437329" duration="1141000" />
       <workItem from="1573168833164" duration="1504000" />
       <workItem from="1573170697490" duration="2064000" />
-      <workItem from="1573173076612" duration="950000" />
+      <workItem from="1573173076612" duration="1626000" />
     </task>
+    <task id="LOCAL-00001" summary="Documentation updated">
+      <created>1573174066737</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573174066737</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,5 +135,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Documentation updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Documentation updated" />
   </component>
 </project>
