@@ -3,22 +3,24 @@
 namespace App\Controller;
 
 use App\ApiProvider\CalculatorDistanceApi;
-use App\ApiProvider\GeolocationApiGouv;
-use App\ApiProvider\IPGeolocation;
 use App\Form\CalculateDistanceDTO;
 use App\Form\CalculateDistanceType;
-use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
+
     /**
-     *
      * @Route("/", name="default")
+     * @param Request $request
+     * @param CalculatorDistanceApi $calculatorDistanceApi
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \GuzzleHttp\Exception\GuzzleException | \Exception
      */
-    public function index(Request $request, Client $client, CalculatorDistanceApi $calculatorDistanceApi)
+    public function index(Request $request, CalculatorDistanceApi $calculatorDistanceApi)
     {
 
         $form = $this->createForm(CalculateDistanceType::class,new CalculateDistanceDTO());
@@ -34,7 +36,7 @@ class DefaultController extends AbstractController
                 $reponse=$calculatorDistanceApi->getDistanceByIpAndPostalAdress($dto->ipAddress,$dto->postalAdress);
                 $response=json_decode($reponse);
                 $distance=$response->distance;
-            }catch (\Exception $exception){
+            }catch (GuzzleException $exception){
                 $distance=-1;
             }
 
