@@ -2,7 +2,7 @@
 
 Steps
 
-   * After completion execute : `docker-compose up -d --build`
+   * Execute : `docker-compose up -d --build`
    * Execute `docker-compose exec php-fpm sh install.sh ` install project dependencies
    
 Front Application
